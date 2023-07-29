@@ -30,7 +30,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <a href="./tailwind.html">tailwind.html</a>
+        <a href="src/tailwind.html">tailwind.html</a>
       </div>
     </>
   );
