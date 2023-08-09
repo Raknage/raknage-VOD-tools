@@ -1,5 +1,6 @@
 import "./tailwind.css";
 
+const dur = "10s";
 const colors = ["red", "green", "blue", "white", "gray"];
 const stroke = [
   "stroke-rose-500",
@@ -11,7 +12,7 @@ const stroke = [
 
 const listItems = colors.map((color, i) => {
   return (
-    <li className="flex-1 m-1" key={color}>
+    <li className="m-1 flex-1" key={color}>
       <svg width="50" height="50" className={stroke[i]}>
         <circle cx="25" cy="25" r="20" strokeWidth="5" />
       </svg>
@@ -21,11 +22,17 @@ const listItems = colors.map((color, i) => {
 
 function Marquee() {
   return (
-      <div className="flex border rounded w-96 m-auto overflow-clip">
-        <ol className="flex animate-marquee">{listItems}</ol>
-        <ol className="flex animate-marquee">{listItems}</ol>
-        <ol className="flex animate-marquee">{listItems}</ol>
-      </div>
+    <div className="m-auto flex w-96 overflow-x-hidden rounded border">
+      <ol className="flex animate-marquee" style={{ animationDuration: dur }}>
+        {listItems}
+      </ol>
+      <ol className="flex animate-marquee" style={{ animationDuration: dur }}>
+        {listItems}
+      </ol>
+      <ol className="flex animate-marquee" style={{ animationDuration: dur }}>
+        {listItems}
+      </ol>
+    </div>
   );
 }
 
